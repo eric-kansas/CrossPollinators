@@ -1,0 +1,27 @@
+﻿<LinearLayout android:id="@+id/LinearLayout01" 
+android:layout_height="wrap_content" 
+android:orientation="horizontal" 
+android:layout_width="fill_parent" 
+android:gravity="center">
+
+	<Button 
+	android:id="@+id/btnOne"
+	android:layout_weight="1"
+	android:layout_width="0dp" 
+	android:layout_height="wrap_content" 
+	android:width="120dip"></Button>
+
+	<Button android:id="@+id/btnTwo"
+	android:layout_weight="1"
+	android:layout_width="0dp" 
+	android:layout_height="wrap_content" 
+	android:width="120dip"/>
+
+	<Button 
+	android:id="@+id/btnThree"
+	android:layout_weight="1"
+	android:layout_width="0dp" 
+	android:layout_height="wrap_content" 
+	android:width="120dip"/>
+
+</LinearLayout>

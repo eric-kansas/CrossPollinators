@@ -6,7 +6,7 @@
     <SharedGUID>{87EE7635-A5EB-42C5-8C27-B0B65CBE1A0B}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>pollinator</Import_RootNamespace>
+    <Import_RootNamespace>playground</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Command.cs" />

@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "cross-pollinators", "playground\cross-pollinators.shproj", "{87EE7635-A5EB-42C5-8C27-B0B65CBE1A0B}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "cross-pollinators", "CrossPollinators\cross-pollinators.shproj", "{87EE7635-A5EB-42C5-8C27-B0B65CBE1A0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-pollinators.iOS", "iOS\cross-pollinators.iOS.csproj", "{F254E01F-3BE3-4086-AFBE-2EBB927BCA38}"
 EndProject

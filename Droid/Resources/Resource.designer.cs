@@ -37,13 +37,8 @@ namespace playground.Droid
 			// aapt resource value: 0x7f050001
 			public const int abc_fade_out = 2131034113;
 			
-<<<<<<< HEAD
-			// aapt resource value: 0x7f050000
-			public const int yourButton = 2131034112;
-=======
 			// aapt resource value: 0x7f050002
 			public const int abc_grow_fade_in_from_bottom = 2131034114;
->>>>>>> fab8caaf5242418432e6243f969d9ad088546f00
 			
 			// aapt resource value: 0x7f050003
 			public const int abc_popup_enter = 2131034115;

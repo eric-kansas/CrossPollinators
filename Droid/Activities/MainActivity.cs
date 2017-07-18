@@ -12,7 +12,7 @@ using Android.Support.V4.View;
 using Android.Support.Design.Widget;
 using System;
 
-namespace playground.Droid
+namespace playground.Droid.UI
 {
     [Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
         LaunchMode = LaunchMode.SingleInstance,
@@ -29,16 +29,17 @@ namespace playground.Droid
         {
             base.OnCreate(savedInstanceState);
 
+			Console.WriteLine("here in start");
             adapter = new TabsAdapter(this, SupportFragmentManager);
             pager = FindViewById<ViewPager>(Resource.Id.viewpager);
-            var tabs = FindViewById<TabLayout>(Resource.Id.tabs);
+
+            TabLayout tabs = FindViewById<TabLayout>(Resource.Id.tabs);
             pager.Adapter = adapter;
             tabs.SetupWithViewPager(pager);
             pager.OffscreenPageLimit = 3;
 
             pager.PageSelected += (sender, args) =>
             {
-                Console.WriteLine("here bro!");
                 var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
 
                 fragment?.BecameVisible();

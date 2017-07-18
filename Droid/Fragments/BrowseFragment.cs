@@ -7,7 +7,7 @@ using Android.Support.V4.Widget;
 using Android.App;
 using Android.Content;
 
-namespace playground.Droid
+namespace playground.Droid.UI
 {
     public class BrowseFragment : Android.Support.V4.App.Fragment, IFragmentVisible
     {
@@ -29,6 +29,7 @@ namespace playground.Droid
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
+            var detailsFrame = Activity.FindViewById<View>(Resource.Id.fragment_content);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -120,7 +121,7 @@ namespace playground.Droid
         {
             //Setup your layout here
             View itemView = null;
-            var id = Resource.Layout.item_browse;
+            var id = Resource.Layout.item_my_item;
             itemView = LayoutInflater.From(parent.Context).Inflate(id, parent, false);
 
             var vh = new MyViewHolder(itemView, OnClick, OnLongClick);
@@ -134,6 +135,8 @@ namespace playground.Droid
 
             // Replace the contents of the view with that element
             var myHolder = holder as MyViewHolder;
+            myHolder.HeaderView.Text = "XPollinator";
+            myHolder.SubHeaderView.Text = "the best";
             myHolder.TextView.Text = item.Text;
             myHolder.DetailTextView.Text = item.Description;
         }
@@ -144,11 +147,15 @@ namespace playground.Droid
     public class MyViewHolder : RecyclerView.ViewHolder
     {
         public TextView TextView { get; set; }
+        public TextView HeaderView { get; set; }
+        public TextView SubHeaderView { get; set; }
         public TextView DetailTextView { get; set; }
 
         public MyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
                             Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
         {
+            HeaderView = itemView.FindViewById<TextView>(Resource.Id.header1);
+            SubHeaderView = itemView.FindViewById<TextView>(Resource.Id.subheader1);
             TextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
             DetailTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);
             itemView.Click += (sender, e) => clickListener(new RecyclerClickEventArgs { View = itemView, Position = AdapterPosition });

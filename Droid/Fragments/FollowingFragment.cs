@@ -9,10 +9,10 @@ using Android.Content;
 
 namespace playground.Droid.UI
 {
-    public class BrowseFragment : Android.Support.V4.App.Fragment, IFragmentVisible
+    public class FollowingFragment : Android.Support.V4.App.Fragment, IFragmentVisible
     {
-        public static BrowseFragment NewInstance() =>
-            new BrowseFragment { Arguments = new Bundle() };
+        public static FollowingFragment NewInstance() =>
+            new FollowingFragment { Arguments = new Bundle() };
 
         BrowseItemsAdapter adapter;
         SwipeRefreshLayout refresher;
@@ -100,12 +100,12 @@ namespace playground.Droid.UI
         }
     }
 
-    class CopyItemsAdapter : BaseRecycleViewAdapter
+    class BrowseItemsAdapter : BaseRecycleViewAdapter
     {
         ItemsViewModel viewModel;
         Activity activity;
 
-        public CopyItemsAdapter(Activity activity, ItemsViewModel viewModel)
+        public BrowseItemsAdapter(Activity activity, ItemsViewModel viewModel)
         {
             this.viewModel = viewModel;
             this.activity = activity;
@@ -124,7 +124,7 @@ namespace playground.Droid.UI
             var id = Resource.Layout.item_my_item;
             itemView = LayoutInflater.From(parent.Context).Inflate(id, parent, false);
 
-            var vh = new CopyViewHolder(itemView, OnClick, OnLongClick);
+            var vh = new MyViewHolder(itemView, OnClick, OnLongClick);
             return vh;
         }
 
@@ -144,14 +144,14 @@ namespace playground.Droid.UI
         public override int ItemCount => viewModel.Items.Count;
     }
 
-    public class CopyViewHolder : RecyclerView.ViewHolder
+    public class MyViewHolder : RecyclerView.ViewHolder
     {
         public TextView TextView { get; set; }
         public TextView HeaderView { get; set; }
         public TextView SubHeaderView { get; set; }
         public TextView DetailTextView { get; set; }
 
-        public CopyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
+        public MyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
                             Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
         {
             HeaderView = itemView.FindViewById<TextView>(Resource.Id.header1);

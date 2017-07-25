@@ -14,7 +14,7 @@ using Android.Support.Design.Widget;
 using Plugin.Connectivity;
 using Plugin.CurrentActivity;
 
-namespace playground.Droid
+namespace playground.Droid.UI
 {
     [Activity(Label = "AddItemActivity")]
     public class AddItemActivity : Activity

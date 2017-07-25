@@ -7,7 +7,7 @@ using Android.Content.PM;
 using Android.Support.V4.Content;
 using Android.Graphics;
 
-namespace playground.Droid
+namespace playground.Droid.UI
 {
     [Activity(Label = "@string/login",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,

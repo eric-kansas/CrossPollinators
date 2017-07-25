@@ -29,7 +29,6 @@ namespace playground.Droid.UI
         {
             base.OnCreate(savedInstanceState);
 
-			Console.WriteLine("here in start");
             adapter = new TabsAdapter(this, SupportFragmentManager);
             pager = FindViewById<ViewPager>(Resource.Id.viewpager);
 
@@ -81,7 +80,7 @@ namespace playground.Droid.UI
             switch (position)
             {
                 case 0: return BrowseFragment.NewInstance();
-                case 1: return AboutFragment.NewInstance();
+                case 1: return FollowingFragment.NewInstance();
                 case 2: return AboutFragment.NewInstance();
             }
             return null;

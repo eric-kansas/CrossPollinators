@@ -141,6 +141,7 @@
     <Compile Include="Activities\ChatActivity.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Fragments\ProjectsFragment.cs" />
+    <Compile Include="Fragments\FollowingFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -191,6 +192,8 @@
     <AndroidResource Include="Resources\drawable\flower.png" />
     <AndroidResource Include="Resources\layout\chat.axml" />
     <AndroidResource Include="Resources\layout\fragment_projects.axml" />
+    <AndroidResource Include="Resources\layout\fragment_chat.axml" />
+    <AndroidResource Include="Resources\layout\item_following.axml" />
   </ItemGroup>
   <Import Project="..\CrossPollinators\cross-pollinators.projitems" Label="Shared" Condition="Exists('..\CrossPollinators\cross-pollinators.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

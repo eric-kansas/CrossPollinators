@@ -41,9 +41,10 @@ namespace playground.Droid.UI
         public void OnTabSelected(Tab tab)
         {
             Console.WriteLine("tab selected: " + tab.Text);
+
 			Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
 			FollowingFragment detailsFrag = new FollowingFragment();
-            fragmentTx.Add(Resource.Id.fragment_content, detailsFrag);
+            fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
 			fragmentTx.Commit();
         }
 

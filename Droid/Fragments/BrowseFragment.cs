@@ -29,7 +29,7 @@ namespace playground.Droid.UI
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
-            var detailsFrame = Activity.FindViewById<View>(Resource.Id.fragment_content);
+            //var detailsFrame = Activity.FindViewById<View>(Resource.Id.fragment_content);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

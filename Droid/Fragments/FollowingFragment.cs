@@ -6,6 +6,8 @@ using Android.Widget;
 using Android.Support.V4.Widget;
 using Android.App;
 using Android.Content;
+using Android.Support.V4.View;
+using Android.Support.Design.Widget;
 
 namespace playground.Droid.UI
 {
@@ -24,12 +26,14 @@ namespace playground.Droid.UI
             set;
         }
 
+		ViewPager pager;
+        TabsAdapter tabsAdapter;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your fragment here
-            var detailsFrame = Activity.FindViewById<View>(Resource.Id.fragment_content);
+			// Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -51,8 +55,25 @@ namespace playground.Droid.UI
 
             progress = view.FindViewById<ProgressBar>(Resource.Id.progressbar_loading);
             progress.Visibility = ViewStates.Gone;
+			////
+            /*
+            tabsAdapter = new TabsAdapter(Activity, Activity.SupportFragmentManager);
+			pager = Activity.FindViewById<ViewPager>(Resource.Id.viewpager);
 
-            return view;
+			TabLayout tabs = Activity.FindViewById<TabLayout>(Resource.Id.tabs);
+			pager.Adapter = tabsAdapter;
+            tabs.SetupWithViewPager(pager);
+            pager.OffscreenPageLimit = 3;
+
+            pager.PageSelected += (sender, args) =>
+            {
+                var fragment = tabsAdapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
+
+                fragment?.BecameVisible();
+            };
+            */
+
+			return view;
         }
 
         public override void OnStart()

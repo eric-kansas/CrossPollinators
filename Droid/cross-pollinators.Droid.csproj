@@ -191,9 +191,9 @@
     <AndroidResource Include="Resources\menu\bottom_menus.xml" />
     <AndroidResource Include="Resources\drawable\flower.png" />
     <AndroidResource Include="Resources\layout\chat.axml" />
-    <AndroidResource Include="Resources\layout\fragment_projects.axml" />
     <AndroidResource Include="Resources\layout\fragment_chat.axml" />
     <AndroidResource Include="Resources\layout\item_following.axml" />
+    <AndroidResource Include="Resources\layout\fragment_project.axml" />
   </ItemGroup>
   <Import Project="..\CrossPollinators\cross-pollinators.projitems" Label="Shared" Condition="Exists('..\CrossPollinators\cross-pollinators.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

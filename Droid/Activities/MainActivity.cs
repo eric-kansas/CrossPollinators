@@ -30,7 +30,7 @@ namespace playground.Droid.UI
             base.OnCreate(savedInstanceState);
 
 			Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
-			FollowingFragment detailsFrag = new FollowingFragment();
+            ProjectsFragment detailsFrag = new ProjectsFragment();
 			fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
 			fragmentTx.Commit();
 

@@ -43,9 +43,28 @@ namespace playground.Droid.UI
             Console.WriteLine("tab selected: " + tab.Text);
 
 			Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
-			FollowingFragment detailsFrag = new FollowingFragment();
-            fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
-			fragmentTx.Commit();
+
+			
+            switch (tab.Text) {
+                case "Projects":
+                    ProjectsFragment projectsFrag = new ProjectsFragment();
+					fragmentTx.Replace(Resource.Id.fragment_container, projectsFrag);
+					fragmentTx.Commit();
+                    break;
+				case "Chat":
+                    AboutFragment chatFrag = new AboutFragment();
+					fragmentTx.Replace(Resource.Id.fragment_container, chatFrag);
+					fragmentTx.Commit();
+					break;
+				case "Me":
+					AboutFragment meFrag = new AboutFragment();
+					fragmentTx.Replace(Resource.Id.fragment_container, meFrag);
+					fragmentTx.Commit();
+					break;
+            }
+
+
+
         }
 
         public void OnTabUnselected(Tab tab)

@@ -29,20 +29,10 @@ namespace playground.Droid.UI
         {
             base.OnCreate(savedInstanceState);
 
-            adapter = new TabsAdapter(this, SupportFragmentManager);
-            pager = FindViewById<ViewPager>(Resource.Id.viewpager);
-
-            TabLayout tabs = FindViewById<TabLayout>(Resource.Id.tabs);
-            pager.Adapter = adapter;
-            tabs.SetupWithViewPager(pager);
-            pager.OffscreenPageLimit = 3;
-
-            pager.PageSelected += (sender, args) =>
-            {
-                var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
-
-                fragment?.BecameVisible();
-            };
+			Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
+			FollowingFragment detailsFrag = new FollowingFragment();
+			fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
+			fragmentTx.Commit();
 
             Toolbar.MenuItemClick += (sender, e) =>
             {

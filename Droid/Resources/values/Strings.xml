@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">playground</string>
+	<string name="app_name">Cross Pollinators</string>
 	<string name="tab1">Discover</string>
 	<string name="tab2">Following</string>
 	<string name="tab3">My Projects</string>

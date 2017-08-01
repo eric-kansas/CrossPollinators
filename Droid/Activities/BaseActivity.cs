@@ -8,7 +8,7 @@ using Android.Content;
 
 namespace playground.Droid.UI
 {
-    public class BaseActivity : AppCompatActivity, IOnTabSelectedListener
+    public class BaseActivity : Android.Support.V7.App.AppCompatActivity, IOnTabSelectedListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,8 +41,11 @@ namespace playground.Droid.UI
         public void OnTabSelected(Tab tab)
         {
             Console.WriteLine("tab selected: " + tab.Text);
-			var intent = new Intent(this, typeof(ChatActivity));
-			StartActivity(intent);
+
+			Android.Support.V4.App.FragmentTransaction fragmentTx = this.SupportFragmentManager.BeginTransaction();
+			FollowingFragment detailsFrag = new FollowingFragment();
+            fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
+			fragmentTx.Commit();
         }
 
         public void OnTabUnselected(Tab tab)

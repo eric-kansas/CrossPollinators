@@ -62,9 +62,6 @@ namespace playground.Droid.UI
 					fragmentTx.Commit();
 					break;
             }
-
-
-
         }
 
         public void OnTabUnselected(Tab tab)

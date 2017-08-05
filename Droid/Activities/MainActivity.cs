@@ -71,7 +71,7 @@ namespace playground.Droid.UI
             {
                 case 0: return BrowseFragment.NewInstance();
                 case 1: return FollowingFragment.NewInstance();
-                case 2: return AboutFragment.NewInstance();
+                case 2: return MyProjectsFragment.NewInstance();
             }
             return null;
         }

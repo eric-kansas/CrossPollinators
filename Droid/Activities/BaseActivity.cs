@@ -57,7 +57,7 @@ namespace playground.Droid.UI
 					fragmentTx.Commit();
 					break;
 				case "Me":
-					AboutFragment meFrag = new AboutFragment();
+					MeFragment meFrag = new MeFragment();
 					fragmentTx.Replace(Resource.Id.fragment_container, meFrag);
 					fragmentTx.Commit();
 					break;

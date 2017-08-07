@@ -26,8 +26,6 @@ namespace playground.Droid.UI
             set;
         }
 
-
-
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -42,8 +40,7 @@ namespace playground.Droid.UI
             ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
 
             View view = inflater.Inflate(Resource.Layout.fragment_browse, container, false);
-            var recyclerView =
-                view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
+            var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
 
             recyclerView.HasFixedSize = true;
             recyclerView.SetAdapter(adapter = new BrowseItemsAdapter(Activity, ViewModel));
@@ -54,8 +51,6 @@ namespace playground.Droid.UI
 
             progress = view.FindViewById<ProgressBar>(Resource.Id.progressbar_loading);
             progress.Visibility = ViewStates.Gone;
-			////
-
 
 			return view;
         }

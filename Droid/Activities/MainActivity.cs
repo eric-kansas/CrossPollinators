@@ -22,9 +22,6 @@ namespace playground.Droid.UI
     {
         protected override int LayoutResource => Resource.Layout.activity_main;
 
-        ViewPager pager;
-        TabsAdapter adapter;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

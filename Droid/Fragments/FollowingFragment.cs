@@ -121,7 +121,7 @@ namespace playground.Droid.UI
         {
             //Setup your layout here
             View itemView = null;
-            var id = Resource.Layout.item_my_item;
+            var id = Resource.Layout.item_following;
             itemView = LayoutInflater.From(parent.Context).Inflate(id, parent, false);
 
             var vh = new MyViewHolder(itemView, OnClick, OnLongClick);

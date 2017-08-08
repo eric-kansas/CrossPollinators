@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
+            android:paddingTop="@dimen/small_margin"
             android:paddingLeft="@dimen/standard_margin"
             android:paddingRight="@dimen/standard_margin"
             style="?android:textAppearanceLarge"
@@ -35,7 +36,16 @@
             android:paddingLeft="@dimen/standard_margin"
             android:paddingRight="@dimen/standard_margin"
             style="?android:textAppearanceSmall"
-            tools:text="San Francisco" />
+            tools:text="San Francisco, CA" />
+        <TextView
+            android:id="@+id/subheader2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/small_margin"
+            android:paddingLeft="@dimen/standard_margin"
+            android:paddingRight="@dimen/standard_margin"
+            style="?android:textAppearanceSmall"
+            tools:text="Objective: Brief mission statement lorem psium. Brief mission statement lorem psium." />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -59,7 +69,7 @@
                 android:paddingRight="@dimen/small_margin"
                 android:maxLines="1"
                 android:ellipsize="end"
-                style="?android:textAppearanceMedium"
+                style="?android:textAppearanceSmall"
                 tools:text="Jane Doe"
                 android:layout_toEndOf="@id/item_count" />
             <TextView
@@ -71,8 +81,55 @@
                 android:padding="@dimen/small_margin"
                 android:ellipsize="end"
                 android:maxLines="4"
-                style="?android:textAppearanceSmall"
+                android:textSize="@dimen/text_extra_small"
                 tools:text="Organization name" />
         </RelativeLayout>
+        <View
+            android:paddingTop="@dimen/standard_margin"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_margin">
+            <TextView
+                android:id="@android:id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/text_xx_small"
+                android:background="#FFD300"
+                tools:text="clean energy" />
+            <TextView
+                android:id="@android:id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/text_xx_small"
+                android:background="#FFD300"
+                tools:text="technology" />
+            <TextView
+                android:id="@android:id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/text_xx_small"
+                android:background="#FFD300"
+                tools:text="social service" />
+            <TextView
+                android:id="@android:id/text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/text_xx_small"
+                android:background="#FFD300"
+                tools:text="community" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

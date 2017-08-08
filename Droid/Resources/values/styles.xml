@@ -32,5 +32,5 @@
 		<item name="android:paddingTop">24dp</item>
 		<item name="android:paddingBottom">24dp</item>
 		<item name="android:orientation">vertical</item>
-	</style>
+	</style>   
 </resources>

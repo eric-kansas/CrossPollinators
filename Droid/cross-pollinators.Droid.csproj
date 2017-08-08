@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>playground.Droid</RootNamespace>
     <AssemblyName>playground.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -200,7 +200,7 @@
     <AndroidResource Include="Resources\drawable\cropped_xPollinators_icon.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\banner_portrait.jpg" />
-    <AndroidResource Include="Resources\layout\item_browse.axml" />
+    <AndroidResource Include="Resources\layout\item_discover.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

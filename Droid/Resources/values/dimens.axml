@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!--Margin-->
 	<dimen name="standard_margin">16dp</dimen>
 	<dimen name="small_margin">8dp</dimen>
 	<dimen name="tiny_margin">4dp</dimen>
+
+    <!--Image-->
 	<dimen name="image_size">120dp</dimen>
+
+    <!--Card-->
 	<dimen name="card_margin">16dp</dimen>
+
+    <!--Fab-->
 	<dimen name="fab_margin">16dp</dimen>
+
+	<!--Text Size-->
 	<dimen name="text_extra_small">12dp</dimen>
 	<dimen name="text_xx_small">10dp</dimen>
+
+	<!--Padding-->
+	<dimen name="standard_padding">16dp</dimen>
+	<dimen name="small_padding">8dp</dimen>
+	<dimen name="tiny_padding">4dp</dimen>
 </resources>

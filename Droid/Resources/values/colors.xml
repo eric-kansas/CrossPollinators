@@ -4,4 +4,14 @@
 	<color name="primaryDark">#1976D2</color>
 	<color name="accent">#96d1ff</color>
 	<color name="window_background">#F5F5F5</color>
+
+    <!--Yellow Shades-->
+	<color name="dark_yellow">#e5d30b</color>
+	<color name="regular_yellow">#fff028</color>
+	<color name="light_yellow">#fff26d</color>
+
+	<!--Gray Shades-->
+    <color name="dark_gray">#475467</color>
+    <color name="regular_gray">#9b9b9b</color>
+    <color name="light_gray">#a5a5a5</color>
 </resources>

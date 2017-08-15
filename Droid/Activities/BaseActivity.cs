@@ -10,7 +10,11 @@ namespace playground.Droid.UI
 {
     public class BaseActivity : Android.Support.V7.App.AppCompatActivity, IOnTabSelectedListener
     {
+		RecyclerView mRecyclerView;
+		RecyclerView.LayoutManager mLayoutManager;
+
         protected override void OnCreate(Bundle savedInstanceState)
+
         {
             base.OnCreate(savedInstanceState);
             SetContentView(LayoutResource);

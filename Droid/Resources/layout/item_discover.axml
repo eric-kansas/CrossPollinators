@@ -12,12 +12,15 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/small_margin">
+        android:padding="@dimen/small_margin"
+        android:layout_marginLeft="0.0dp">
         <ImageView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/banner_portrait" />
+            android:src="@drawable/banner_portrait"
+            android:scaleType="centerInside"
+            android:id="@+id/imageView1" />
         <TextView
             android:id="@+id/header1"
             android:layout_width="match_parent"
@@ -141,4 +144,5 @@
                 tools:text="community" />
         </LinearLayout>
     </LinearLayout>
+<!--Make the cards render dynamically after service call-->
 </android.support.v7.widget.CardView>

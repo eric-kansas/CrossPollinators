@@ -30,12 +30,12 @@ namespace playground.Droid.UI
 
             var data = Intent.GetStringExtra("data");
 
-            var item = Newtonsoft.Json.JsonConvert.DeserializeObject<Item>(data);
+            var item = Newtonsoft.Json.JsonConvert.DeserializeObject<ProjectModel>(data);
             viewModel = new ItemDetailViewModel(item);
 
-            FindViewById<TextView>(Resource.Id.description).Text = item.Description;
+            FindViewById<TextView>(Resource.Id.description).Text = item.Body;
 
-            SupportActionBar.Title = item.Text;
+            SupportActionBar.Title = item.HeaderText;
         }
 
         protected override void OnStart()

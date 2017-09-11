@@ -5,7 +5,7 @@
         /// <summary>
         /// Get the azure service instance
         /// </summary>
-        public IDataStore<Item> DataStore => ServiceLocator.Instance.Get<IDataStore<Item>>();
+        public IDataStore<ProjectModel> DataStore => ServiceLocator.Instance.Get<IDataStore<ProjectModel>>();
 
         bool isBusy = false;
         public bool IsBusy

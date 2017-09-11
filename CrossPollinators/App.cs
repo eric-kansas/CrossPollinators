@@ -6,7 +6,7 @@ namespace playground
     public partial class App
     {
         public static bool UseMockDataStore = true;
-        public static string BackendUrl = "http://localhost:5000";
+        public static string BackendUrl = "http://localhost:3030";
 
         public App()
         {
@@ -16,9 +16,9 @@ namespace playground
         {
             if (UseMockDataStore){
                 Console.WriteLine("Kansas init mock");
-                ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
+                ServiceLocator.Instance.Register<IDataStore<ProjectModel>, MockDataStore>();
             }else
-                ServiceLocator.Instance.Register<IDataStore<Item>, CloudDataStore>();
+                ServiceLocator.Instance.Register<IDataStore<ProjectModel>, BackendDataStore>();
 
 #if __IOS__
 			ServiceLocator.Instance.Register<IMessageDialog, iOS.MessageDialog>();

@@ -19,8 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IBaseDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IMessageDialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProjectModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BackendDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
@@ -30,5 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserModel.cs" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@ namespace playground.iOS
 {
     public partial class ItemNewViewController : UIViewController
     {
-        public Item Item { get; set; }
+        public ProjectModel Item { get; set; }
         public ItemsViewModel viewModel { get; set; }
         public BaseViewModel baseModel { get; set; }
 
@@ -22,7 +22,7 @@ namespace playground.iOS
 
             btnSaveItem.TouchUpInside += (sender, e) =>
             {
-                var _item = new Item();
+                var _item = new ProjectModel();
                 _item.Text = txtTitle.Text;
                 _item.Description = txtDesc.Text;
                 MessagingCenter.Send(this, "AddItem", _item);

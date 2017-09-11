@@ -134,10 +134,10 @@ namespace playground.Droid.UI
 
             // Replace the contents of the view with that element
             var myHolder = holder as MyProjectsViewHolder;
-            myHolder.HeaderView.Text = "XPollinator";
-            myHolder.SubHeaderView.Text = "my project";
-            myHolder.TextView.Text = item.Text;
-            myHolder.DetailTextView.Text = item.Description;
+            myHolder.HeaderView.Text = item.HeaderText;
+            myHolder.SubHeaderView.Text = item.SubHeader;
+            myHolder.TextView.Text = item.Body;
+            myHolder.DetailTextView.Text = item.Body;
         }
 
         public override int ItemCount => viewModel.Items.Count;

@@ -2409,11 +2409,11 @@ namespace playground.Droid
 			// aapt resource value: 0x7f080095
 			public const int button_learn_more = 2131230869;
 			
-			// aapt resource value: 0x7f08007b
-			public const int button_not_now = 2131230843;
+			// aapt resource value: 0x7f08007a
+			public const int button_not_now = 2131230842;
 			
-			// aapt resource value: 0x7f08007c
-			public const int button_signin = 2131230844;
+			// aapt resource value: 0x7f08007b
+			public const int button_signin = 2131230843;
 			
 			// aapt resource value: 0x7f0800a7
 			public const int cancel_action = 2131230887;
@@ -2448,8 +2448,8 @@ namespace playground.Droid
 			// aapt resource value: 0x7f080088
 			public const int container = 2131230856;
 			
-			// aapt resource value: 0x7f08007d
-			public const int container_signin = 2131230845;
+			// aapt resource value: 0x7f08007c
+			public const int container_signin = 2131230844;
 			
 			// aapt resource value: 0x7f08004e
 			public const int contentPanel = 2131230798;
@@ -2469,8 +2469,8 @@ namespace playground.Droid
 			// aapt resource value: 0x7f080047
 			public const int default_activity_button = 2131230791;
 			
-			// aapt resource value: 0x7f08007a
-			public const int description = 2131230842;
+			// aapt resource value: 0x7f080081
+			public const int description = 2131230849;
 			
 			// aapt resource value: 0x7f08008b
 			public const int design_bottom_sheet = 2131230859;
@@ -2526,8 +2526,8 @@ namespace playground.Droid
 			// aapt resource value: 0x7f08003f
 			public const int @fixed = 2131230783;
 			
-			// aapt resource value: 0x7f08007f
-			public const int fragment_container = 2131230847;
+			// aapt resource value: 0x7f08007e
+			public const int fragment_container = 2131230846;
 			
 			// aapt resource value: 0x7f08009b
 			public const int header1 = 2131230875;
@@ -2643,8 +2643,8 @@ namespace playground.Droid
 			// aapt resource value: 0x7f080083
 			public const int progressbar_loading = 2131230851;
 			
-			// aapt resource value: 0x7f08007e
-			public const int progressbar_signin = 2131230846;
+			// aapt resource value: 0x7f08007d
+			public const int progressbar_signin = 2131230845;
 			
 			// aapt resource value: 0x7f080098
 			public const int project_content = 2131230872;
@@ -2790,11 +2790,11 @@ namespace playground.Droid
 			// aapt resource value: 0x7f080084
 			public const int tabs = 2131230852;
 			
-			// aapt resource value: 0x7f080080
-			public const int tabs2 = 2131230848;
+			// aapt resource value: 0x7f08007f
+			public const int tabs2 = 2131230847;
 			
-			// aapt resource value: 0x7f080081
-			public const int text = 2131230849;
+			// aapt resource value: 0x7f080080
+			public const int text = 2131230848;
 			
 			// aapt resource value: 0x7f0800b6
 			public const int text2 = 2131230902;
@@ -3024,16 +3024,16 @@ namespace playground.Droid
 			public const int activity_add_item = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int activity_item_details = 2130968604;
+			public const int activity_login = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int activity_login = 2130968605;
+			public const int activity_main = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int activity_main = 2130968606;
+			public const int activity_myitem_details = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int activity_myitem_details = 2130968607;
+			public const int activity_project_details = 2130968607;
 			
 			// aapt resource value: 0x7f040020
 			public const int chat = 2130968608;
@@ -3084,10 +3084,10 @@ namespace playground.Droid
 			public const int fragment_about = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int fragment_browse = 2130968624;
+			public const int fragment_chat = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int fragment_chat = 2130968625;
+			public const int fragment_list = 2130968625;
 			
 			// aapt resource value: 0x7f040032
 			public const int fragment_me = 2130968626;

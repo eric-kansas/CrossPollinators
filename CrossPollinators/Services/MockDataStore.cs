@@ -8,7 +8,6 @@ namespace playground
 {
     public class MockDataStore : IDataStore<ProjectModel>
     {
-        bool isInitialized;
         List<ProjectModel> items;
 
         public MockDataStore()

@@ -6,15 +6,17 @@ using Android.Widget;
 using Android.Support.V4.Widget;
 using Android.App;
 using Android.Content;
+using Android.Support.V4.View;
+using Android.Support.Design.Widget;
 
 namespace playground.Droid.UI
 {
-    public class BrowseFragment : Android.Support.V4.App.Fragment, IFragmentVisible
+    public class FollowingFragment : Android.Support.V4.App.Fragment
     {
-        public static BrowseFragment NewInstance() =>
-            new BrowseFragment { Arguments = new Bundle() };
+        public static FollowingFragment NewInstance() =>
+            new FollowingFragment { Arguments = new Bundle() };
 
-        BrowseItemsAdapter adapter;
+        FollowingItemsAdapter adapter;
         SwipeRefreshLayout refresher;
 
         ProgressBar progress;
@@ -28,8 +30,7 @@ namespace playground.Droid.UI
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your fragment here
-            //var detailsFrame = Activity.FindViewById<View>(Resource.Id.fragment_content);
+			// Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -38,12 +39,11 @@ namespace playground.Droid.UI
 
             ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
 
-            View view = inflater.Inflate(Resource.Layout.fragment_browse, container, false);
-            var recyclerView =
-                view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
+            View view = inflater.Inflate(Resource.Layout.fragment_list, container, false);
+            var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
 
             recyclerView.HasFixedSize = true;
-            recyclerView.SetAdapter(adapter = new BrowseItemsAdapter(Activity, ViewModel));
+            recyclerView.SetAdapter(adapter = new FollowingItemsAdapter(Activity, ViewModel));
 
             refresher = view.FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
 
@@ -52,7 +52,7 @@ namespace playground.Droid.UI
             progress = view.FindViewById<ProgressBar>(Resource.Id.progressbar_loading);
             progress.Visibility = ViewStates.Gone;
 
-            return view;
+			return view;
         }
 
         public override void OnStart()
@@ -78,7 +78,7 @@ namespace playground.Droid.UI
         private void Adapter_ItemClick(object sender, RecyclerClickEventArgs e)
         {
             var item = ViewModel.Items[e.Position];
-            var intent = new Intent(Activity, typeof(BrowseItemDetailActivity));
+            var intent = new Intent(Activity, typeof(ProjectDetailActivity));
 
             intent.PutExtra("data", Newtonsoft.Json.JsonConvert.SerializeObject(item));
             Activity.StartActivity(intent);
@@ -100,12 +100,12 @@ namespace playground.Droid.UI
         }
     }
 
-    class CopyItemsAdapter : BaseRecycleViewAdapter
+    class FollowingItemsAdapter : BaseRecycleViewAdapter
     {
         ItemsViewModel viewModel;
         Activity activity;
 
-        public CopyItemsAdapter(Activity activity, ItemsViewModel viewModel)
+        public FollowingItemsAdapter(Activity activity, ItemsViewModel viewModel)
         {
             this.viewModel = viewModel;
             this.activity = activity;
@@ -119,12 +119,12 @@ namespace playground.Droid.UI
         // Create new views (invoked by the layout manager)
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            //Setup your layout here
+            // Setup your layout here
             View itemView = null;
-            var id = Resource.Layout.item_discover;
+            var id = Resource.Layout.item_following;
             itemView = LayoutInflater.From(parent.Context).Inflate(id, parent, false);
 
-            var vh = new CopyViewHolder(itemView, OnClick, OnLongClick);
+            var vh = new FollowingItemViewHolder(itemView, OnClick, OnLongClick);
             return vh;
         }
 
@@ -134,33 +134,30 @@ namespace playground.Droid.UI
             var item = viewModel.Items[position];
 
             // Replace the contents of the view with that element
-            var myHolder = holder as MyViewHolder;
-            myHolder.HeaderView.Text = item.HeaderText;
-            myHolder.SubHeaderView.Text = item.SubHeader;
-            myHolder.TextView.Text = item.Author.Username;
-            myHolder.DetailTextView.Text = item.Author.Organization;
+            var itemViewHolder = holder as FollowingItemViewHolder;
+            itemViewHolder.HeaderView.Text = item.HeaderText;
+            itemViewHolder.SubHeaderView.Text = item.SubHeader;
+			itemViewHolder.TextView.Text = item.Author.Username;
+			itemViewHolder.DetailTextView.Text = item.Author.Organization;
         }
 
         public override int ItemCount => viewModel.Items.Count;
     }
 
-    public class CopyViewHolder : RecyclerView.ViewHolder
+    public class FollowingItemViewHolder : RecyclerView.ViewHolder
     {
-        
+        public TextView TextView { get; set; }
         public TextView HeaderView { get; set; }
         public TextView SubHeaderView { get; set; }
+        public TextView DetailTextView { get; set; }
 
-        public TextView AuthorNameView { get; set; }
-        public TextView OrganizationTextView { get; set; }
-
-        public CopyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
+        public FollowingItemViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
                             Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
         {
             HeaderView = itemView.FindViewById<TextView>(Resource.Id.header1);
             SubHeaderView = itemView.FindViewById<TextView>(Resource.Id.subheader1);
-            AuthorNameView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
-            OrganizationTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);
-
+            TextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
+            DetailTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);
             itemView.Click += (sender, e) => clickListener(new RecyclerClickEventArgs { View = itemView, Position = AdapterPosition });
             itemView.LongClick += (sender, e) => longClickListener(new RecyclerClickEventArgs { View = itemView, Position = AdapterPosition });
         }

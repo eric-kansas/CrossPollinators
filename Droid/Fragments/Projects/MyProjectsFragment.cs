@@ -11,12 +11,12 @@ using Android.Support.Design.Widget;
 
 namespace playground.Droid.UI
 {
-    public class FollowingFragment : Android.Support.V4.App.Fragment, IFragmentVisible
+    public class MyProjectsFragment : Android.Support.V4.App.Fragment
     {
-        public static FollowingFragment NewInstance() =>
-            new FollowingFragment { Arguments = new Bundle() };
+        public static MyProjectsFragment NewInstance() =>
+            new MyProjectsFragment { Arguments = new Bundle() };
 
-        BrowseItemsAdapter adapter;
+        MyProjectsItemsAdapter adapter;
         SwipeRefreshLayout refresher;
 
         ProgressBar progress;
@@ -29,8 +29,6 @@ namespace playground.Droid.UI
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-			// Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -39,11 +37,12 @@ namespace playground.Droid.UI
 
             ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
 
-            View view = inflater.Inflate(Resource.Layout.fragment_browse, container, false);
-            var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
+            View view = inflater.Inflate(Resource.Layout.fragment_my_projects, container, false);
+            var recyclerView =
+                view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
 
             recyclerView.HasFixedSize = true;
-            recyclerView.SetAdapter(adapter = new BrowseItemsAdapter(Activity, ViewModel));
+            recyclerView.SetAdapter(adapter = new MyProjectsItemsAdapter(Activity, ViewModel));
 
             refresher = view.FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
 
@@ -78,7 +77,7 @@ namespace playground.Droid.UI
         private void Adapter_ItemClick(object sender, RecyclerClickEventArgs e)
         {
             var item = ViewModel.Items[e.Position];
-            var intent = new Intent(Activity, typeof(BrowseItemDetailActivity));
+            var intent = new Intent(Activity, typeof(ProjectDetailActivity));
 
             intent.PutExtra("data", Newtonsoft.Json.JsonConvert.SerializeObject(item));
             Activity.StartActivity(intent);
@@ -100,12 +99,12 @@ namespace playground.Droid.UI
         }
     }
 
-    class BrowseItemsAdapter : BaseRecycleViewAdapter
+    class MyProjectsItemsAdapter : BaseRecycleViewAdapter
     {
         ItemsViewModel viewModel;
         Activity activity;
 
-        public BrowseItemsAdapter(Activity activity, ItemsViewModel viewModel)
+        public MyProjectsItemsAdapter(Activity activity, ItemsViewModel viewModel)
         {
             this.viewModel = viewModel;
             this.activity = activity;
@@ -121,10 +120,10 @@ namespace playground.Droid.UI
         {
             //Setup your layout here
             View itemView = null;
-            var id = Resource.Layout.item_following;
+            var id = Resource.Layout.item_project;
             itemView = LayoutInflater.From(parent.Context).Inflate(id, parent, false);
 
-            var vh = new MyViewHolder(itemView, OnClick, OnLongClick);
+            var vh = new MyProjectsViewHolder(itemView, OnClick, OnLongClick);
             return vh;
         }
 
@@ -134,24 +133,24 @@ namespace playground.Droid.UI
             var item = viewModel.Items[position];
 
             // Replace the contents of the view with that element
-            var myHolder = holder as MyViewHolder;
+            var myHolder = holder as MyProjectsViewHolder;
             myHolder.HeaderView.Text = item.HeaderText;
             myHolder.SubHeaderView.Text = item.SubHeader;
-			myHolder.TextView.Text = item.Author.Username;
-			myHolder.DetailTextView.Text = item.Author.Organization;
+            myHolder.TextView.Text = item.Body;
+            myHolder.DetailTextView.Text = item.Body;
         }
 
         public override int ItemCount => viewModel.Items.Count;
     }
 
-    public class MyViewHolder : RecyclerView.ViewHolder
+    public class MyProjectsViewHolder : RecyclerView.ViewHolder
     {
         public TextView TextView { get; set; }
         public TextView HeaderView { get; set; }
         public TextView SubHeaderView { get; set; }
         public TextView DetailTextView { get; set; }
 
-        public MyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
+        public MyProjectsViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
                             Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
         {
             HeaderView = itemView.FindViewById<TextView>(Resource.Id.header1);

@@ -5,12 +5,12 @@ using Android.Widget;
 
 namespace playground.Droid
 {
-    public class MeFragment : Android.Support.V4.App.Fragment, IFragmentVisible
+    public class MeFragment : Android.Support.V4.App.Fragment
     {
         public static MeFragment NewInstance() =>
             new MeFragment { Arguments = new Bundle() };
 
-        public AboutViewModel ViewModel { get; set; }
+        public MeViewModel ViewModel { get; set; }
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,7 +22,7 @@ namespace playground.Droid
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_me, container, false);
-            ViewModel = new AboutViewModel();
+            ViewModel = new MeViewModel();
             learnMoreButton = view.FindViewById<Button>(Resource.Id.button_learn_more);
             return view;
         }

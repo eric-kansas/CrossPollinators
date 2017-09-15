@@ -1,18 +1,12 @@
 ﻿using Android.OS;
-using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using System;
 using Android.Support.Design.Widget;
 using static Android.Support.Design.Widget.TabLayout;
-using Android.Content;
-
 namespace playground.Droid.UI
 {
     public class BaseActivity : Android.Support.V7.App.AppCompatActivity, IOnTabSelectedListener
     {
-		RecyclerView mRecyclerView;
-		RecyclerView.LayoutManager mLayoutManager;
-
         protected override void OnCreate(Bundle savedInstanceState)
 
         {
@@ -56,9 +50,9 @@ namespace playground.Droid.UI
 					fragmentTx.Commit();
                     break;
 				case "Chat":
-                    AboutFragment chatFrag = new AboutFragment();
-					fragmentTx.Replace(Resource.Id.fragment_container, chatFrag);
-					fragmentTx.Commit();
+                    //AboutFragment chatFrag = new AboutFragment();
+					//fragmentTx.Replace(Resource.Id.fragment_container, chatFrag);
+					//fragmentTx.Commit();
 					break;
 				case "Me":
 					MeFragment meFrag = new MeFragment();

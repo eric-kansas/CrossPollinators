@@ -125,23 +125,21 @@
   <ItemGroup>
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
-    <Compile Include="Activities\BrowseItemDetailActivity.cs" />
+    <Compile Include="Activities\ProjectDetailActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
-    <Compile Include="Fragments\AboutFragment.cs" />
-    <Compile Include="Fragments\BrowseFragment.cs" />
-    <Compile Include="Fragments\IFragmentVisible.cs" />
     <Compile Include="Helpers\BaseRecycleViewAdapter.cs" />
     <Compile Include="Helpers\MessageDialog.cs" />
     <Compile Include="Helpers\RecyclerClickEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Fragments\ProjectsFragment.cs" />
-    <Compile Include="Fragments\FollowingFragment.cs" />
-    <Compile Include="Fragments\MyProjectsFragment.cs" />
-    <Compile Include="Fragments\MeFragment.cs" />
+    <Compile Include="Fragments\Projects\DiscoverFragment.cs" />
+    <Compile Include="Fragments\Projects\FollowingFragment.cs" />
+    <Compile Include="Fragments\Projects\MyProjectsFragment.cs" />
+    <Compile Include="Fragments\Me\MeFragment.cs" />
+    <Compile Include="Fragments\Projects\ProjectsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -165,12 +163,12 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_save.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\profile_generic.png" />
     <AndroidResource Include="Resources\layout\activity_add_item.axml" />
-    <AndroidResource Include="Resources\layout\activity_item_details.axml" />
+    <AndroidResource Include="Resources\layout\activity_project_details.axml" />
     <AndroidResource Include="Resources\layout\activity_login.axml" />
     <AndroidResource Include="Resources\layout\activity_main.axml" />
     <AndroidResource Include="Resources\layout\activity_myitem_details.axml" />
     <AndroidResource Include="Resources\layout\fragment_about.axml" />
-    <AndroidResource Include="Resources\layout\fragment_browse.axml" />
+    <AndroidResource Include="Resources\layout\fragment_list.axml" />
     <AndroidResource Include="Resources\layout\fragment_myitems.axml" />
     <AndroidResource Include="Resources\layout\item_project.axml" />
     <AndroidResource Include="Resources\layout\tabs.axml" />
@@ -203,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
+    <Folder Include="Fragments\Projects\" />
+    <Folder Include="Fragments\Me\" />
+    <Folder Include="Fragments\Chat\" />
   </ItemGroup>
   <Import Project="..\CrossPollinators\cross-pollinators.projitems" Label="Shared" Condition="Exists('..\CrossPollinators\cross-pollinators.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

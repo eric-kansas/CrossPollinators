@@ -11,7 +11,7 @@ using Android.Support.Design.Widget;
 
 namespace playground.Droid.UI
 {
-    public class MyProjectsFragment : Android.Support.V4.App.Fragment, IFragmentVisible
+    public class MyProjectsFragment : Android.Support.V4.App.Fragment
     {
         public static MyProjectsFragment NewInstance() =>
             new MyProjectsFragment { Arguments = new Bundle() };
@@ -77,7 +77,7 @@ namespace playground.Droid.UI
         private void Adapter_ItemClick(object sender, RecyclerClickEventArgs e)
         {
             var item = ViewModel.Items[e.Position];
-            var intent = new Intent(Activity, typeof(BrowseItemDetailActivity));
+            var intent = new Intent(Activity, typeof(ProjectDetailActivity));
 
             intent.PutExtra("data", Newtonsoft.Json.JsonConvert.SerializeObject(item));
             Activity.StartActivity(intent);

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace playground
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class ProjectDetailViewModel : BaseViewModel
     {
         public ProjectModel Item { get; set; }
-        public ItemDetailViewModel(ProjectModel item = null)
+
+        public ProjectDetailViewModel(ProjectModel item = null)
         {
             if (item != null)
             {
@@ -18,11 +19,5 @@ namespace playground
             }
         }
 
-        int quantity = 1;
-        public int Quantity
-        {
-            get { return quantity; }
-            set { SetProperty(ref quantity, value); }
-        }
     }
 }

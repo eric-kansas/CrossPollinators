@@ -137,8 +137,8 @@ namespace playground.Droid.UI
             var myHolder = holder as MyViewHolder;
             myHolder.HeaderView.Text = item.HeaderText;
             myHolder.SubHeaderView.Text = item.SubHeader;
-            myHolder.TextView.Text = item.Body;
-            myHolder.DetailTextView.Text = item.Body;
+            myHolder.TextView.Text = item.Author.Username;
+            myHolder.DetailTextView.Text = item.Author.Organization;
         }
 
         public override int ItemCount => viewModel.Items.Count;
@@ -146,18 +146,21 @@ namespace playground.Droid.UI
 
     public class CopyViewHolder : RecyclerView.ViewHolder
     {
-        public TextView TextView { get; set; }
+        
         public TextView HeaderView { get; set; }
         public TextView SubHeaderView { get; set; }
-        public TextView DetailTextView { get; set; }
+
+        public TextView AuthorNameView { get; set; }
+        public TextView OrganizationTextView { get; set; }
 
         public CopyViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
                             Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
         {
             HeaderView = itemView.FindViewById<TextView>(Resource.Id.header1);
             SubHeaderView = itemView.FindViewById<TextView>(Resource.Id.subheader1);
-            TextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
-            DetailTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);
+            AuthorNameView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
+            OrganizationTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);
+
             itemView.Click += (sender, e) => clickListener(new RecyclerClickEventArgs { View = itemView, Position = AdapterPosition });
             itemView.LongClick += (sender, e) => longClickListener(new RecyclerClickEventArgs { View = itemView, Position = AdapterPosition });
         }

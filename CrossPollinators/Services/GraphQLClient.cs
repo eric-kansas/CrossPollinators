@@ -29,7 +29,7 @@ namespace playground.Services
 			var graphQuery = new { query };
 			var content = new StringContent(JsonConvert.SerializeObject(graphQuery), Encoding.UTF8, "application/json");
 
-			var response = await _client.PostAsync("https://api.github.com/graphql", content);
+			var response = await _client.PostAsync(crossPollinatorsHost, content);
 			var json = await response.Content.ReadAsStringAsync();
 
 			var graphResult = JsonConvert.DeserializeObject<GraphResult<T>>(json);

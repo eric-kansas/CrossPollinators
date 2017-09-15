@@ -28,7 +28,20 @@ namespace playground
                         Organization = "org"
                     },
                     Tags = new ArrayList(new string[] {"css","gif","htm","html","txt","xml"})
-                }
+                },
+				new ProjectModel {
+					Id = Guid.NewGuid().ToString(),
+					HeaderImageURL = "some url",
+					HeaderText = "Second project",
+					SubHeader = "This is something different than the first",
+					Body = "this is the body text",
+					Author = new UserModel {
+						AvatarURL = "avatarurl",
+						Username = "kansas",
+						Organization = "org"
+					},
+					Tags = new ArrayList(new string[] {"css","gif","htm","html","txt","xml"})
+				}
             };
 
             foreach (ProjectModel item in _items)

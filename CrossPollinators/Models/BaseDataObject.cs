@@ -21,5 +21,9 @@ namespace playground
         /// </summary>
         [JsonProperty(PropertyName = "createdAt")]
         public DateTimeOffset CreatedAt { get; set; }
+
+        public string ToGraphQL() {
+            return "";
+        }
     }
 }

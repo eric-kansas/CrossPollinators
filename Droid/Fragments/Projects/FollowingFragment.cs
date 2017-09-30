@@ -135,8 +135,8 @@ namespace playground.Droid.UI
 
             // Replace the contents of the view with that element
             var itemViewHolder = holder as FollowingItemViewHolder;
-            itemViewHolder.HeaderView.Text = item.HeaderText;
-            itemViewHolder.SubHeaderView.Text = item.SubHeader;
+            itemViewHolder.HeaderView.Text = item.Name;
+            itemViewHolder.SubHeaderView.Text = item.Description;
 			itemViewHolder.TextView.Text = item.Author.Username;
 			itemViewHolder.DetailTextView.Text = item.Author.Organization;
         }

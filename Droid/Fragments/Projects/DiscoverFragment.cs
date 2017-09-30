@@ -32,7 +32,7 @@ namespace playground.Droid.UI
         {
             ViewModel = new ItemsViewModel();
 
-            ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
+            ServiceLocator.Instance.Register<GraphQLClient, GraphQLClient>();
 
             View view = inflater.Inflate(Resource.Layout.fragment_list, container, false);
             var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
@@ -126,8 +126,8 @@ namespace playground.Droid.UI
 
 			// Replace the contents of the view with that element
 			var itemViewHolder = holder as DiscoverItemViewHolder;
-			itemViewHolder.HeaderView.Text = item.HeaderText;
-			itemViewHolder.SubHeaderView.Text = item.SubHeader;
+			itemViewHolder.HeaderView.Text = item.Name;
+			itemViewHolder.SubHeaderView.Text = item.Description;
 			itemViewHolder.TextView.Text = item.Author.Username;
 			itemViewHolder.DetailTextView.Text = item.Author.Organization;
 		}

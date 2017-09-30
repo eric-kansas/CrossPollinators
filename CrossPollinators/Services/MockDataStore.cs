@@ -18,8 +18,8 @@ namespace playground
                 new ProjectModel {
                     Id = Guid.NewGuid().ToString(),
                     HeaderImageURL = "First item",
-                    HeaderText = "Header Text",
-                    SubHeader = "This is a nice description",
+                    Name = "Header Text",
+                    Description = "This is a nice description",
                     Body = "Body text",
                     Author = new UserModel {
                         AvatarURL = "avatarurl",
@@ -31,8 +31,8 @@ namespace playground
 				new ProjectModel {
 					Id = Guid.NewGuid().ToString(),
 					HeaderImageURL = "some url",
-					HeaderText = "Second project",
-					SubHeader = "This is something different than the first",
+					Name = "Second project",
+					Description = "This is something different than the first",
 					Body = "this is the body text",
 					Author = new UserModel {
 						AvatarURL = "avatarurl",
@@ -81,6 +81,11 @@ namespace playground
         public async Task<IEnumerable<ProjectModel>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
+        }
+
+        public Task<IEnumerable<ProjectModel>> Query(string query)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -21,7 +21,6 @@ namespace playground.Droid.UI
             }
 
             TabLayout toolbarBottom = FindViewById<TabLayout>(Resource.Id.tabs2);
-
             if (toolbarBottom != null)
             {
                 toolbarBottom.AddTab(toolbarBottom.NewTab().SetText("Projects").SetIcon(Resource.Drawable.flower));

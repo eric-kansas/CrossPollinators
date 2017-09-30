@@ -36,7 +36,7 @@ namespace playground.Droid.UI
 
             FindViewById<TextView>(Resource.Id.description).Text = item.Body;
 
-            SupportActionBar.Title = item.HeaderText;
+            SupportActionBar.Title = item.Name;
         }
 
         protected override void OnStart()

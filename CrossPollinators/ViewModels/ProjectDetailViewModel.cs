@@ -14,7 +14,7 @@ namespace playground
         {
             if (item != null)
             {
-                Title = item.HeaderText;
+                Title = item.Name;
                 Item = item;
             }
         }

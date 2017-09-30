@@ -134,8 +134,8 @@ namespace playground.Droid.UI
 
             // Replace the contents of the view with that element
             var myHolder = holder as MyProjectsViewHolder;
-            myHolder.HeaderView.Text = item.HeaderText;
-            myHolder.SubHeaderView.Text = item.SubHeader;
+            myHolder.HeaderView.Text = item.Name;
+            myHolder.SubHeaderView.Text = item.Description;
             myHolder.TextView.Text = item.Body;
             myHolder.DetailTextView.Text = item.Body;
         }

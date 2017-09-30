@@ -2,6 +2,11 @@
 
 namespace playground
 {
+	public class DiscoverQueryResult
+	{
+		public ProjectModel[] Projects { get; set; }
+	}
+
     public class ProjectModel : BaseDataObject
     {
         public ProjectModel() : base()
@@ -15,18 +20,18 @@ namespace playground
             set { SetProperty(ref headerImageURL, value); }
         }
 
-        string headerText = string.Empty;
-        public string HeaderText
+        string name = string.Empty;
+        public string Name
         {
-            get { return headerText; }
-            set { SetProperty(ref headerText, value); }
+            get { return name; }
+            set { SetProperty(ref name, value); }
         }
 
-		string subHeader = string.Empty;
-		public string SubHeader
+        string description = string.Empty;
+		public string Description
 		{
-			get { return subHeader; }
-			set { SetProperty(ref subHeader, value); }
+			get { return description; }
+			set { SetProperty(ref description, value); }
 		}
 
 		string body = string.Empty;

@@ -15,8 +15,8 @@ namespace playground
         public static void Initialize()
         {
             if (UseMockDataStore){
-                Console.WriteLine("Kansas init mock");
-                ServiceLocator.Instance.Register<IDataStore<ProjectModel>, MockDataStore>();
+                Console.WriteLine("Kansas init graphql");
+                ServiceLocator.Instance.Register<IDataStore<ProjectModel>, GraphQLClient>();
             }else
                 ServiceLocator.Instance.Register<IDataStore<ProjectModel>, BackendDataStore>();
 

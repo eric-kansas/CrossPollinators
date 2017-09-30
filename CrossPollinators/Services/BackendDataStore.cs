@@ -80,5 +80,10 @@ namespace playground
 
             return response.IsSuccessStatusCode ? true : false;
         }
+
+        public Task<IEnumerable<ProjectModel>> Query(string query)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace playground.Droid.UI
 		{
 			// Setup your layout here
 			View itemView = null;
-			var id = Resource.Layout.item_following;
+            var id = Resource.Layout.item_discover;
 			itemView = LayoutInflater.From(parent.Context).Inflate(id, parent, false);
 
 			var vh = new DiscoverItemViewHolder(itemView, OnClick, OnLongClick);
@@ -128,8 +128,10 @@ namespace playground.Droid.UI
 			var itemViewHolder = holder as DiscoverItemViewHolder;
 			itemViewHolder.HeaderView.Text = item.Name;
 			itemViewHolder.SubHeaderView.Text = item.Description;
-			itemViewHolder.TextView.Text = item.Author.Username;
-			itemViewHolder.DetailTextView.Text = item.Author.Organization;
+            itemViewHolder.DetailTextView.Text = item.Objective;
+
+			itemViewHolder.FullNameTextView.Text = item.Author.Full_Name;
+            itemViewHolder.OrganizationTextView.Text = item.Author.Organization;
 		}
 
 		public override int ItemCount => viewModel.Items.Count;
@@ -137,10 +139,11 @@ namespace playground.Droid.UI
 
 	public class DiscoverItemViewHolder : RecyclerView.ViewHolder
 	{
-		public TextView TextView { get; set; }
 		public TextView HeaderView { get; set; }
 		public TextView SubHeaderView { get; set; }
 		public TextView DetailTextView { get; set; }
+		public TextView FullNameTextView { get; set; }
+		public TextView OrganizationTextView { get; set; }
 
 		public DiscoverItemViewHolder(View itemView, Action<RecyclerClickEventArgs> clickListener,
 							Action<RecyclerClickEventArgs> longClickListener) : base(itemView)
@@ -148,8 +151,10 @@ namespace playground.Droid.UI
 			HeaderView = itemView.FindViewById<TextView>(Resource.Id.header1);
 			SubHeaderView = itemView.FindViewById<TextView>(Resource.Id.subheader1);
 
-			TextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text1);
-			DetailTextView = itemView.FindViewById<TextView>(Android.Resource.Id.Text2);
+            DetailTextView = itemView.FindViewById<TextView>(Resource.Id.objective);
+
+            FullNameTextView = itemView.FindViewById<TextView>(Resource.Id.full_name);
+            OrganizationTextView = itemView.FindViewById<TextView>(Resource.Id.organization);
 
             // Add event handlers
 			itemView.Click += (sender, e) => clickListener(new RecyclerClickEventArgs { View = itemView, Position = AdapterPosition });

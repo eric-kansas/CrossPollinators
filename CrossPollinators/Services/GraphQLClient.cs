@@ -17,7 +17,7 @@ namespace playground
 
 	public class GraphQLClient : IDataStore<ProjectModel>
 	{
-		private const string crossPollinatorsHost = "http://192.168.1.104:3030/graphql";
+		private const string crossPollinatorsHost = "http://192.168.1.222:3030/graphql";
 
 		private readonly HttpClient _client;
 
@@ -32,7 +32,7 @@ namespace playground
                   }
                 } }";
 */
-        private const string DiscoverQuery = "{ \"query\": \"{ projects:discover (first: 15) { name description } }\" }";
+        private const string DiscoverQuery = "{ \"query\": \"{ discover (first: 15) { name description objective author { id full_name organization } } }\" }";
 
 
 		public GraphQLClient()
@@ -53,9 +53,7 @@ namespace playground
 
                 var graphResult = JsonConvert.DeserializeObject<GraphResult<DiscoverQueryResult>>(json);
 
-                Console.WriteLine("Kansas:" + graphResult.Data);
-
-                items = graphResult.Data.Projects;
+                items = graphResult.Data.Discover;
             }
 			return items;
 		}

@@ -41,7 +41,7 @@
             style="?android:textAppearanceSmall"
             tools:text="San Francisco, CA" />
         <TextView
-            android:id="@+id/body"
+            android:id="@+id/objective"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/small_margin"
@@ -64,7 +64,7 @@
                 android:transitionName="cimage"
                 android:layout_margin="12dp" />
             <TextView
-                android:id="@android:id/text1"
+                android:id="@+id/full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/small_margin"
@@ -76,11 +76,11 @@
                 tools:text="Jane Doe"
                 android:layout_toEndOf="@id/item_count" />
             <TextView
-                android:id="@android:id/text2"
+                android:id="@+id/organization"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/item_count"
-                android:layout_below="@android:id/text1"
+                android:layout_below="@id/full_name"
                 android:padding="@dimen/small_margin"
                 android:ellipsize="end"
                 android:maxLines="4"

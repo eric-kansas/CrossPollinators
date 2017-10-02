@@ -20,10 +20,10 @@ namespace playground
                     HeaderImageURL = "First item",
                     Name = "Header Text",
                     Description = "This is a nice description",
-                    Body = "Body text",
+                    Objective = "Body text",
                     Author = new UserModel {
                         AvatarURL = "avatarurl",
-                        Username = "kansas",
+                        Full_Name = "kansas",
                         Organization = "org"
                     },
                     Tags = new ArrayList(new string[] {"css","gif","htm","html","txt","xml"})
@@ -33,10 +33,10 @@ namespace playground
 					HeaderImageURL = "some url",
 					Name = "Second project",
 					Description = "This is something different than the first",
-					Body = "this is the body text",
+					Objective = "this is the body text",
 					Author = new UserModel {
 						AvatarURL = "avatarurl",
-						Username = "kansas",
+						Full_Name = "kansas",
 						Organization = "org"
 					},
 					Tags = new ArrayList(new string[] {"css","gif","htm","html","txt","xml"})

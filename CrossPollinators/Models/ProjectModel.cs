@@ -4,7 +4,7 @@ namespace playground
 {
 	public class DiscoverQueryResult
 	{
-		public ProjectModel[] Projects { get; set; }
+		public ProjectModel[] Discover { get; set; }
 	}
 
     public class ProjectModel : BaseDataObject
@@ -34,11 +34,11 @@ namespace playground
 			set { SetProperty(ref description, value); }
 		}
 
-		string body = string.Empty;
-		public string Body
+		string objective = string.Empty;
+		public string Objective
 		{
-			get { return body; }
-			set { SetProperty(ref body, value); }
+			get { return objective; }
+			set { SetProperty(ref objective, value); }
 		}
 
         UserModel author = new UserModel();

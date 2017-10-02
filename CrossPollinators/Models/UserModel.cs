@@ -13,11 +13,11 @@
 			set { SetProperty(ref avatarURL, value); }
 		}
 
-		string username = string.Empty;
-		public string Username
+		string fullname = string.Empty;
+		public string Full_Name
 		{
-			get { return username; }
-			set { SetProperty(ref username, value); }
+			get { return fullname; }
+			set { SetProperty(ref fullname, value); }
 		}
 
 		string organization = string.Empty;

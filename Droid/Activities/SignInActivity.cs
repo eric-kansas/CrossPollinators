@@ -9,20 +9,21 @@ using Android.Graphics;
 
 namespace playground.Droid.UI
 {
-    [Activity(Label = "@string/login",
+    [Activity(Label = "Login",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
-    public class LoginActivity : BaseActivity
+    public class SignInActivity : BaseActivity
     {
         /// <summary>
         /// Specify the layout to inflace
         /// </summary>
-        protected override int LayoutResource => Resource.Layout.activity_login;
+        protected override int LayoutResource => Resource.Layout.activity_sign_in;
 
-        Button signInButton, notNowButton;
+        Button signInButton, registerButton;
         LinearLayout signingInPanel;
         ProgressBar progressBar;
         LoginViewModel viewModel;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //Layout gets inflated here
@@ -31,15 +32,13 @@ namespace playground.Droid.UI
             viewModel = new LoginViewModel();
 
             signInButton = FindViewById<Button>(Resource.Id.button_signin);
-            notNowButton = FindViewById<Button>(Resource.Id.button_not_now);
+            registerButton = FindViewById<Button>(Resource.Id.button_register);
 
-            signInButton.Text = "Sign In";
+            //progressBar = FindViewById<ProgressBar>(Resource.Id.progressbar_signin);
+            //signingInPanel = FindViewById<LinearLayout>(Resource.Id.container_signin);
 
-            progressBar = FindViewById<ProgressBar>(Resource.Id.progressbar_signin);
-            signingInPanel = FindViewById<LinearLayout>(Resource.Id.container_signin);
-
-            progressBar.Indeterminate = false;
-            signingInPanel.Visibility = ViewStates.Invisible;
+            //progressBar.Indeterminate = false;
+            //signingInPanel.Visibility = ViewStates.Invisible;
 
             //Turn off back arrows
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
@@ -50,29 +49,18 @@ namespace playground.Droid.UI
         {
             base.OnStart();
             signInButton.Click += SignInButton_Click;
-            notNowButton.Click += NotNowButton_Click;
+            registerButton.Click += CancelButton_Click;
         }
 
         protected override void OnStop()
         {
             base.OnStop();
             signInButton.Click -= SignInButton_Click;
-            notNowButton.Click -= NotNowButton_Click;
-        }
-
-        void NotNowButton_Click(object sender, System.EventArgs e)
-        {
-            var intent = new Intent(this, typeof(MainActivity));
-            intent.AddFlags(ActivityFlags.ClearTop);
-            StartActivity(intent);
-            Finish();
+            registerButton.Click -= CancelButton_Click;
         }
 
         async void SignInButton_Click(object sender, System.EventArgs e)
         {
-            var intent = new Intent(this, typeof(SignInActivity));
-            StartActivity(intent);
-            /*
             await viewModel.SignIn();
 
             if (Settings.IsLoggedIn)
@@ -82,7 +70,11 @@ namespace playground.Droid.UI
                 StartActivity(intent);
                 Finish();
             }
-            */
+        }
+
+        void CancelButton_Click(object sender, System.EventArgs e)
+        {
+            Finish();
         }
     }
 }

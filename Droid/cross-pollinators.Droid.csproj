@@ -140,6 +140,7 @@
     <Compile Include="Fragments\Projects\MyProjectsFragment.cs" />
     <Compile Include="Fragments\Me\MeFragment.cs" />
     <Compile Include="Fragments\Projects\ProjectsFragment.cs" />
+    <Compile Include="Activities\SignInActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -198,6 +199,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\banner_portrait.jpg" />
     <AndroidResource Include="Resources\layout\item_discover.axml" />
+    <AndroidResource Include="Resources\layout\activity_sign_in.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

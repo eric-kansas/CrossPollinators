@@ -4,10 +4,10 @@
     android:shape="oval"
     >
     <!-- The fill color -->
-    <solid android:color="@color/primary" />
+    <solid android:color="@color/cross_light_blue" />
     <!-- Just to add a border -->
     <stroke
-        android:color="@color/primaryDark"
+        android:color="@color/cross_dark_blue"
         android:width="2dp"
     />
 </shape>

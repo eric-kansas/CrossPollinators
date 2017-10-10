@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
+using System;
 
 namespace playground
 {
@@ -26,6 +27,8 @@ namespace playground
             {
                 IsBusy = true;
                 Message = "Signing In...";
+                Console.WriteLine("SignIn: " + Message);
+
 
                 // Log the user in
                 await TryLoginAsync();
@@ -34,13 +37,13 @@ namespace playground
             {
                 Message = string.Empty;
                 IsBusy = false;
-
             }
         }
 
 
         public static async Task<bool> TryLoginAsync()
         {
+            Settings.UserId = "something";
             return true;
         }
     }

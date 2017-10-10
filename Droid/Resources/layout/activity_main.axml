@@ -18,9 +18,13 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="@color/cross_black"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_scrollFlags="scroll|enterAlways|snap" />
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:title="CrossPollinators"
+                app:subtitle="Projects"
+                app:titleTextColor="@color/cross_yellow"
+                app:subtitleTextColor="@color/cross_yellow" />
         </android.support.design.widget.AppBarLayout>
         <LinearLayout
             android:id="@+id/fragment_container"
@@ -34,9 +38,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="?android:attr/colorAccent"
+            android:background="@color/cross_black"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:tabIndicatorColor="?android:attr/colorAccent"
+            app:tabIndicatorColor="@color/cross_yellow"
             app:tabGravity="fill"
             app:tabMode="fixed" />
     </LinearLayout>

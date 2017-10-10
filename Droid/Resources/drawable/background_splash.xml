@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item
-      android:drawable="@color/primaryDark"/>
+      android:drawable="@color/cross_dark_blue"/>
 
   <item>
     <bitmap

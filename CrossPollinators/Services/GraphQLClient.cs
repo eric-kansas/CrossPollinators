@@ -17,21 +17,12 @@ namespace playground
 
 	public class GraphQLClient : IDataStore<ProjectModel>
 	{
-		private const string crossPollinatorsHost = "http://192.168.1.222:3030/graphql";
+		private const string crossPollinatorsHost = "http://192.168.1.133:3030/graphql";
 
 		private readonly HttpClient _client;
 
         private IEnumerable<ProjectModel> items;
 
-        /*
-		private const string DiscoverQuery =
-	@"{ query {
-                  discover (first:15) {
-                    name
-                    description
-                  }
-                } }";
-*/
         private const string DiscoverQuery = "{ \"query\": \"{ discover (first: 15) { name description objective author { id full_name organization } } }\" }";
 
 
@@ -39,7 +30,7 @@ namespace playground
 		{
 			_client = new HttpClient();
 			//_client.DefaultRequestHeaders.Add("Authorization", "Bearer your-bearer-token-goes-here");
-			//_client.DefaultRequestHeaders.Add("User-Agent", "Xamarin-GraphQL-Demo");
+			//_client.DefaultRequestHeader s.Add("User-Agent", "Xamarin-GraphQL-Demo");
 		}
 
 		public async Task<IEnumerable<ProjectModel>> GetItemsAsync(bool forceRefresh = false)

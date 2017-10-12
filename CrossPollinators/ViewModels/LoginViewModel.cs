@@ -21,17 +21,15 @@ namespace playground
         public ICommand NotNowCommand { get; }
         public ICommand SignInCommand { get; }
 
-        public async Task SignIn()
+        public async Task SignIn(String email, String password)
         {
             try
             {
                 IsBusy = true;
                 Message = "Signing In...";
-                Console.WriteLine("SignIn: " + Message);
-
 
                 // Log the user in
-                await TryLoginAsync();
+                await TryLoginAsync(email, password);
             }
             finally
             {
@@ -40,11 +38,30 @@ namespace playground
             }
         }
 
-
-        public static async Task<bool> TryLoginAsync()
+        public async Task<bool> TryLoginAsync(String email, String password)
         {
-            Settings.UserId = "something";
-            return true;
+            String response = "";
+            try
+            {
+                response = await DataStore.Login(email, password);
+            }
+            catch (Exception ex)
+            {
+                // MessageDialog.SendMessage("Unable to load items.", "Error");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+            Console.WriteLine("reponse: " + response);
+
+            if (response == "Success")
+            {
+                Settings.UserId = "something";
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -87,5 +87,10 @@ namespace playground
         {
             throw new NotImplementedException();
         }
+
+        public async Task<String> Login(String email, String password)
+        {
+            return "user";
+        }
     }
 }

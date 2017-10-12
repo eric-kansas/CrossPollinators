@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp">
         <TextView

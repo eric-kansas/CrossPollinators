@@ -6,7 +6,7 @@ namespace playground
     public partial class App
     {
         public static bool UseMockDataStore = true;
-        public static string BackendUrl = "http://localhost:3030";
+        public static string BackendUrl = "http://192.168.1.222:3030";
 
         public App()
         {
@@ -14,10 +14,14 @@ namespace playground
 
         public static void Initialize()
         {
+            Settings.UserId = "";
+
             if (UseMockDataStore){
                 ServiceLocator.Instance.Register<IDataStore<ProjectModel>, GraphQLClient>();
             }else
-                ServiceLocator.Instance.Register<IDataStore<ProjectModel>, BackendDataStore>();
+                ServiceLocator.Instance.Register<IDataStore<ProjectModel>, CrossPollinatorsAPI>();
+
+
 
 #if __IOS__
 			ServiceLocator.Instance.Register<IMessageDialog, iOS.MessageDialog>();

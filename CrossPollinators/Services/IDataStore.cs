@@ -12,5 +12,6 @@ namespace playground
         //Task<IEnumerable<ProjectModel>> Query(string query);
         Task<T> GetItemAsync(string id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<String> Login(String email, String password);
     }
 }

@@ -20,7 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IMessageDialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ProjectModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\BackendDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CrossPollinatorsAPI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />

@@ -20,6 +20,7 @@ namespace playground.Droid.UI
         protected override int LayoutResource => Resource.Layout.activity_sign_in;
 
         Button signInButton, registerButton;
+        EditText emailInput, passwordInput;
         LinearLayout signingInPanel;
         ProgressBar progressBar;
         LoginViewModel viewModel;
@@ -33,6 +34,9 @@ namespace playground.Droid.UI
 
             signInButton = FindViewById<Button>(Resource.Id.button_signin);
             registerButton = FindViewById<Button>(Resource.Id.button_register);
+
+            emailInput = FindViewById<EditText>(Resource.Id.input_email);
+            passwordInput = FindViewById<EditText>(Resource.Id.input_password);
 
             //progressBar = FindViewById<ProgressBar>(Resource.Id.progressbar_signin);
             //signingInPanel = FindViewById<LinearLayout>(Resource.Id.container_signin);
@@ -61,7 +65,7 @@ namespace playground.Droid.UI
 
         async void SignInButton_Click(object sender, System.EventArgs e)
         {
-            await viewModel.SignIn();
+            await viewModel.SignIn(emailInput.Text, passwordInput.Text);
 
             if (Settings.IsLoggedIn)
             {

@@ -17,8 +17,6 @@ namespace playground
 
 	public class GraphQLClient : IDataStore<ProjectModel>
 	{
-		private const string crossPollinatorsHost = "http://192.168.1.133:3030/graphql";
-
 		private readonly HttpClient _client;
 
         private IEnumerable<ProjectModel> items;
@@ -39,7 +37,7 @@ namespace playground
             {
                 var content = new StringContent(DiscoverQuery, Encoding.UTF8, "application/json");
 
-                var response = await _client.PostAsync(crossPollinatorsHost, content);
+                var response = await _client.PostAsync("http://192.168.1.222:3030/graphql", content);
                 var json = await response.Content.ReadAsStringAsync();
 
                 var graphResult = JsonConvert.DeserializeObject<GraphResult<DiscoverQueryResult>>(json);
@@ -53,6 +51,22 @@ namespace playground
 		{
 			return null;
 		}
+
+        public async Task<String> Login(String email, String password)
+        {
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                var formContent = new FormUrlEncodedContent(new[]{
+                    new KeyValuePair<string, string>("email", email),
+                    new KeyValuePair<string, string>("password", password)
+                });
+
+                var httpResponse = await _client.PostAsync("http://192.168.1.222:3030/login", formContent);
+                return await httpResponse.Content.ReadAsStringAsync();
+            }
+
+            return "";
+        }
 
 	}
 }

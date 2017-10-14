@@ -126,7 +126,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
     <Compile Include="Activities\ProjectDetailActivity.cs" />
-    <Compile Include="Activities\LoginActivity.cs" />
+    <Compile Include="Activities\LandingActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Helpers\BaseRecycleViewAdapter.cs" />
@@ -141,6 +141,7 @@
     <Compile Include="Fragments\Me\MeFragment.cs" />
     <Compile Include="Fragments\Projects\ProjectsFragment.cs" />
     <Compile Include="Activities\SignInActivity.cs" />
+    <Compile Include="Activities\RegisterActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -200,6 +201,7 @@
     <AndroidResource Include="Resources\drawable\banner_portrait.jpg" />
     <AndroidResource Include="Resources\layout\item_discover.axml" />
     <AndroidResource Include="Resources\layout\activity_sign_in.axml" />
+    <AndroidResource Include="Resources\layout\activity_register.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

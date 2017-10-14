@@ -68,5 +68,21 @@ namespace playground
             return "";
         }
 
+        public async Task<String> Register(String email, String password)
+        {
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                var formContent = new FormUrlEncodedContent(new[]{
+                    new KeyValuePair<string, string>("email", email),
+                    new KeyValuePair<string, string>("password", password)
+                });
+
+                var httpResponse = await _client.PostAsync("http://192.168.1.222:3030/register", formContent);
+                return await httpResponse.Content.ReadAsStringAsync();
+            }
+
+            return "";
+        }
+
 	}
 }

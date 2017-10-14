@@ -13,5 +13,6 @@ namespace playground
         Task<T> GetItemAsync(string id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
         Task<String> Login(String email, String password);
+        Task<String> Register(String email, String password);
     }
 }

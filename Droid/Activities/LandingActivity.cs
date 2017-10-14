@@ -12,23 +12,21 @@ namespace playground.Droid.UI
     [Activity(Label = "@string/login",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
-    public class LoginActivity : BaseActivity
+    public class LandingActivity : BaseActivity
     {
-        /// <summary>
-        /// Specify the layout to inflace
-        /// </summary>
-        protected override int LayoutResource => Resource.Layout.activity_login;
-
         Button signInButton, notNowButton;
         LinearLayout signingInPanel;
         ProgressBar progressBar;
-        LoginViewModel viewModel;
+        RegisterViewModel viewModel;
+
+        protected override int LayoutResource => Resource.Layout.activity_login;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            //Layout gets inflated here
+            // Layout gets inflated here
             base.OnCreate(savedInstanceState);
 
-            viewModel = new LoginViewModel();
+            viewModel = new RegisterViewModel();
 
             signInButton = FindViewById<Button>(Resource.Id.button_signin);
             notNowButton = FindViewById<Button>(Resource.Id.button_not_now);
@@ -41,7 +39,7 @@ namespace playground.Droid.UI
             progressBar.Indeterminate = false;
             signingInPanel.Visibility = ViewStates.Invisible;
 
-            //Turn off back arrows
+            // Turn off back arrows
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
             SupportActionBar.SetHomeButtonEnabled(false);
         }
@@ -68,21 +66,10 @@ namespace playground.Droid.UI
             Finish();
         }
 
-        async void SignInButton_Click(object sender, System.EventArgs e)
+        void SignInButton_Click(object sender, System.EventArgs e)
         {
             var intent = new Intent(this, typeof(SignInActivity));
             StartActivity(intent);
-            /*
-            await viewModel.SignIn();
-
-            if (Settings.IsLoggedIn)
-            {
-                var intent = new Intent(this, typeof(MainActivity));
-                intent.AddFlags(ActivityFlags.ClearTop);
-                StartActivity(intent);
-                Finish();
-            }
-            */
         }
     }
 }

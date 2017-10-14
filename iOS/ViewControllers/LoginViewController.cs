@@ -5,11 +5,11 @@ namespace playground.iOS
 {
     public partial class LoginViewController : UIViewController
     {
-        public LoginViewModel ViewModel;
+        public RegisterViewModel ViewModel;
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
-            ViewModel = new LoginViewModel();
+            ViewModel = new RegisterViewModel();
         }
 
         public override void ViewDidLoad()

@@ -6,25 +6,24 @@ using Android.Content.PM;
 
 namespace playground.Droid.UI
 {
-    [Activity(Label = "Login",
+    [Activity(Label = "Register",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SignInActivity : BaseActivity
+    public class RegisterActivity : BaseActivity
     {
-        protected override int LayoutResource => Resource.Layout.activity_sign_in;
+        protected override int LayoutResource => Resource.Layout.activity_register;
 
-        LoginViewModel viewModel;
-        Button signInButton, registerButton;
+        Button registerButton;
         EditText emailInput, passwordInput;
+        RegisterViewModel viewModel;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            // Layout gets inflated here
+            //Layout gets inflated here
             base.OnCreate(savedInstanceState);
 
-            viewModel = new LoginViewModel();
+            viewModel = new RegisterViewModel();
 
-            signInButton = FindViewById<Button>(Resource.Id.button_signin);
             registerButton = FindViewById<Button>(Resource.Id.button_register);
 
             emailInput = FindViewById<EditText>(Resource.Id.input_email);
@@ -38,34 +37,28 @@ namespace playground.Droid.UI
         protected override void OnStart()
         {
             base.OnStart();
-            signInButton.Click += SignInButton_Click;
             registerButton.Click += RegisterButton_Click;
         }
 
         protected override void OnStop()
         {
             base.OnStop();
-            signInButton.Click -= SignInButton_Click;
             registerButton.Click -= RegisterButton_Click;
         }
 
-        async void SignInButton_Click(object sender, System.EventArgs e)
+        async void RegisterButton_Click(object sender, System.EventArgs e)
         {
-            await viewModel.SignIn(emailInput.Text, passwordInput.Text);
+            await viewModel.Register(emailInput.Text, passwordInput.Text);
 
             if (Settings.IsLoggedIn)
             {
-                var intent = new Intent(this, typeof(MainActivity));
+                var intent = new Intent(Application.Context, typeof(MainActivity));
+                intent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
                 StartActivity(intent);
+                FinishAffinity();
+            } else {
+                // handle error
             }
-        }
-
-        void RegisterButton_Click(object sender, System.EventArgs e)
-        {
-            var intent = new Intent(Application.Context, typeof(MainActivity));
-            intent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
-            StartActivity(intent);
-            FinishAffinity();
         }
     }
 }

@@ -10,6 +10,9 @@
 	<string name="signing_in">Signing in...</string>
 	<string name="email">Email</string>
 	<string name="password">Password</string>
+	<string name="organization">Organization (Optional)</string>
+	<string name="register_email">Email*</string>
+    <string name="register_password">Password*</string>
 	<string name="log_in">Sign in</string>
 	<string name="register">register</string>
 	<string name="do_not_have_account_text">Do not have an account?</string>

@@ -16,7 +16,7 @@ namespace playground.Droid.UI
             if (Settings.IsLoggedIn)
                 newIntent = new Intent(this, typeof(MainActivity));
             else
-                newIntent = new Intent(this, typeof(LoginActivity));
+                newIntent = new Intent(this, typeof(LandingActivity));
 
             newIntent.AddFlags(ActivityFlags.ClearTop);
             newIntent.AddFlags(ActivityFlags.SingleTop);

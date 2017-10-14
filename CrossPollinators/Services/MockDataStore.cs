@@ -92,5 +92,10 @@ namespace playground
         {
             return "user";
         }
+
+        public async Task<String> Register(String email, String password)
+        {
+            return "success";
+        }
     }
 }

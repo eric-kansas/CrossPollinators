@@ -26,8 +26,8 @@ namespace playground.Droid.UI
 
             registerButton = FindViewById<Button>(Resource.Id.button_register);
 
-            emailInput = FindViewById<EditText>(Resource.Id.input_email);
-            passwordInput = FindViewById<EditText>(Resource.Id.input_password);
+            emailInput = FindViewById<EditText>(Resource.Id.register_input_email);
+            passwordInput = FindViewById<EditText>(Resource.Id.register_input_password);
 
             // Turn on back arrows
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
@@ -48,6 +48,7 @@ namespace playground.Droid.UI
 
         async void RegisterButton_Click(object sender, System.EventArgs e)
         {
+            
             await viewModel.Register(emailInput.Text, passwordInput.Text);
 
             if (Settings.IsLoggedIn)

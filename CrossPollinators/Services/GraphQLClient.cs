@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -15,20 +16,30 @@ namespace playground
 		public T Data { get; set; }
 	}
 
+
 	public class GraphQLClient : IDataStore<ProjectModel>
 	{
 		private readonly HttpClient _client;
 
         private IEnumerable<ProjectModel> items;
 
+        private Uri baseURI = new Uri("http://192.168.1.222:3030/");
+
         private const string DiscoverQuery = "{ \"query\": \"{ discover (first: 15) { name description objective author { id full_name organization } } }\" }";
 
+        private CookieContainer cookies = new CookieContainer();
+
+        private HttpClientHandler httpClientHandler = new HttpClientHandler
+        {
+            UseCookies = true,
+        };
 
 		public GraphQLClient()
 		{
-			_client = new HttpClient();
+            httpClientHandler.CookieContainer = cookies;
+            _client = new HttpClient(httpClientHandler);
 			//_client.DefaultRequestHeaders.Add("Authorization", "Bearer your-bearer-token-goes-here");
-			//_client.DefaultRequestHeader s.Add("User-Agent", "Xamarin-GraphQL-Demo");
+			_client.DefaultRequestHeaders.Add("User-Agent", "Cross Pollinators Android App");
 		}
 
 		public async Task<IEnumerable<ProjectModel>> GetItemsAsync(bool forceRefresh = false)
@@ -62,6 +73,16 @@ namespace playground
                 });
 
                 var httpResponse = await _client.PostAsync("http://192.168.1.222:3030/login", formContent);
+
+                Uri uri = new Uri("http://192.168.1.222:3030/login");
+                var responseCookies = cookies.GetCookies(uri);
+
+                cookies.Add(baseURI, new Cookie("auth_token", responseCookies["auth_token"].Value));
+                foreach (Cookie cookie in responseCookies)
+                {
+                    Console.WriteLine(cookie.Name + ": " + cookie.Value);
+                }
+
                 return await httpResponse.Content.ReadAsStringAsync();
             }
 

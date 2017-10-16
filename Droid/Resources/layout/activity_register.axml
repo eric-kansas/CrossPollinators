@@ -21,9 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/input_email"
+            android:id="@+id/register_input_email"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:inputType="textEmailAddress" />
         <TextView
             android:layout_marginTop="12dp"
             android:text="@string/register_password"
@@ -31,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/input_password"
+            android:id="@+id/register_input_password"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:inputType="textPassword" />

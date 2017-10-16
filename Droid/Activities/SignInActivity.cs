@@ -56,16 +56,16 @@ namespace playground.Droid.UI
             if (Settings.IsLoggedIn)
             {
                 var intent = new Intent(this, typeof(MainActivity));
+                intent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
                 StartActivity(intent);
+                FinishAffinity();
             }
         }
 
         void RegisterButton_Click(object sender, System.EventArgs e)
         {
-            var intent = new Intent(Application.Context, typeof(MainActivity));
-            intent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+            var intent = new Intent(Application.Context, typeof(RegisterActivity));
             StartActivity(intent);
-            FinishAffinity();
         }
     }
 }

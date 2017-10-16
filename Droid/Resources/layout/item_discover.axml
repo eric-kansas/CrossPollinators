@@ -12,6 +12,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/cross_background"
         android:padding="@dimen/small_margin"
         android:layout_marginLeft="0.0dp">
         <ImageView

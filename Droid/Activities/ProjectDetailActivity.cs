@@ -34,7 +34,7 @@ namespace playground.Droid.UI
             var item = Newtonsoft.Json.JsonConvert.DeserializeObject<ProjectModel>(data);
             viewModel = new ProjectDetailViewModel(item);
 
-            FindViewById<TextView>(Resource.Id.description).Text = item.Objective;
+            FindViewById<TextView>(Resource.Id.project_name).Text = item.Name;
 
             SupportActionBar.Title = item.Name;
         }

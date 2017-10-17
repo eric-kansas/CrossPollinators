@@ -1,18 +1,344 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_content" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true">
-	<android.support.design.widget.AppBarLayout android:id="@+id/appbar" android:layout_width="match_parent" android:layout_height="256dp" android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:fitsSystemWindows="true">
-		<android.support.design.widget.CollapsingToolbarLayout android:id="@+id/collapsing_toolbar" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_scrollFlags="scroll|exitUntilCollapsed" android:fitsSystemWindows="true" app:contentScrim="?attr/colorPrimary" app:expandedTitleMarginStart="48dp" app:expandedTitleMarginEnd="64dp">
-			<android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:layout_collapseMode="pin" />
-		</android.support.design.widget.CollapsingToolbarLayout>
-	</android.support.design.widget.AppBarLayout>
-	<android.support.v4.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
-		<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:paddingTop="24dp">
-			<android.support.v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/card_margin">
-				<LinearLayout style="@style/Widget.CardContent" android:layout_width="match_parent" android:layout_height="wrap_content">
-					<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/description" android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-					<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/description" />
-				</LinearLayout>
-			</android.support.v7.widget.CardView>
-		</LinearLayout>
-	</android.support.v4.widget.NestedScrollView>
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/banner_portrait"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:id="@+id/project_detail_header_image" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin"
+                android:padding="5dp"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Some Project name this is pretty long"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="fill"
+                    android:id="@+id/project_name" />
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/follow"
+                    android:backgroundTint="@color/cross_light_blue"
+                    android:id="@+id/button_follow" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/organizer" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:transitionName="cimage"
+                            android:layout_margin="12dp"
+                            android:src="@drawable/avatar_placeholder"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/avatar" />
+                        <TextView
+                            android:id="@+id/full_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/small_margin"
+                            android:paddingLeft="@dimen/small_margin"
+                            android:paddingRight="@dimen/small_margin"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            style="?android:textAppearanceMedium"
+                            android:text="Jane Doe"
+                            android:layout_toEndOf="@id/avatar" />
+                        <TextView
+                            android:id="@+id/organization"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/avatar"
+                            android:layout_below="@id/full_name"
+                            android:padding="@dimen/small_margin"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            style="?android:textAppearanceSmall"
+                            android:text="Organization name" />
+                        <Button
+                            android:id="@+id/button_send_a_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/avatar"
+                            android:layout_below="@id/organization"
+                            android:padding="@dimen/small_margin"
+                            android:backgroundTint="@color/cross_dark_blue"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            style="?android:textAppearanceSmall"
+                            android:text="Send a Message" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/photos" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/banner_portrait"
+                        android:scaleType="centerInside"
+                        android:layout_margin="@dimen/card_margin"
+                        android:adjustViewBounds="true"
+                        android:id="@+id/carasel_1" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/objectives" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_margin"
+                        android:layout_marginRight="@dimen/card_margin"
+                        style="?android:textAppearanceSmall"
+                        android:text=" This is some objective of the project that is important" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/comments"
+                android:backgroundTint="@color/cross_light_blue"
+                android:id="@+id/button_comments" />
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/updates"
+                android:backgroundTint="@color/cross_light_blue"
+                android:id="@+id/button_updates" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/location" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_margin"
+                        android:layout_marginRight="@dimen/card_margin"
+                        style="?android:textAppearanceSmall"
+                        android:text="6 Milton St, San Francisco, CA 94112" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/date" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_margin"
+                        android:layout_marginRight="@dimen/card_margin"
+                        style="?android:textAppearanceSmall"
+                        android:text="June 1, 2017" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/detailed_description" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_margin"
+                        android:layout_marginRight="@dimen/card_margin"
+                        style="?android:textAppearanceSmall"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non laoreet nunc. Pellentesque tincidunt, diam sodales fringilla vestibulum, leo nibh cursus massa, quis sagittis odio nibh sed erat. Vestibulum lacinia at leo nec congue. Nulla ac molestie mi. Duis ornare sem vitae nulla ultrices facilisis. Sed gravida suscipit diam, luctus finibus orci vehicula sit amet. Quisque vehicula, urna eu fermentum pulvinar, enim nisi lobortis lorem, vel vehicula velit felis ac est. Etiam sagittis massa sit amet magna vestibulum viverra. Quisque efficitur placerat sollicitudin. Sed lorem velit, eleifend quis lacus quis, convallis pretium elit." />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/needs" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_margin"
+                        android:layout_marginRight="@dimen/card_margin"
+                        style="?android:textAppearanceSmall"
+                        android:text="∑ Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre.\n∑ Quote meon an estimate et non interruptus stadium.\n∑ Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum.\n∑ Epsum factorial non deposit quid pro quo hic escorol." />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/org_info" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_margin"
+                        android:layout_marginRight="@dimen/card_margin"
+                        style="?android:textAppearanceSmall"
+                        android:text="Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum." />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                style="?android:textAppearanceLarge"
+                android:text="@string/tags" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

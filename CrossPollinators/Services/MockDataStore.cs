@@ -20,7 +20,7 @@ namespace playground
                     HeaderImageURL = "First item",
                     Name = "Header Text",
                     Description = "This is a nice description",
-                    Objective = "Body text",
+                    Objective = "this is an important objective text",
                     Author = new UserModel {
                         AvatarURL = "avatarurl",
                         Full_Name = "kansas",
@@ -33,7 +33,7 @@ namespace playground
 					HeaderImageURL = "some url",
 					Name = "Second project",
 					Description = "This is something different than the first",
-					Objective = "this is the body text",
+					Objective = "this is an important objective text",
 					Author = new UserModel {
 						AvatarURL = "avatarurl",
 						Full_Name = "kansas",

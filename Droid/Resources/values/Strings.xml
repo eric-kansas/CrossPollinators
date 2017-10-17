@@ -29,4 +29,16 @@
 	<string name="hint_description">Description</string>
 	<string name="app_description">This app is written in C# and native APIs using the Xamarin Platform. It shares code with its iOS, Android, &amp; Windows versions.</string>
 	<string name="sign_in_text">Sign in with your account to save and sync items</string>
+	<string name="follow">Follow</string>
+	<string name="organizer">Organizer</string>
+	<string name="photos">Photos</string>
+	<string name="objectives">Objectives</string>
+	<string name="comments">Comments</string>
+    <string name="updates">Updates</string>
+	<string name="location">Location</string>
+    <string name="date">Date</string>
+	<string name="detailed_description">Detailed Description</string>
+	<string name="needs">Needs</string>
+	<string name="org_info">Organization Info</string>
+    <string name="tags">Tags</string>
 </resources>
